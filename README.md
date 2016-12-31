@@ -1,9 +1,9 @@
 
 \#include <fcntl.h>
-#include <iostream> 
-#include <cstring>
-#include <cstdlib>
-#include <unistd.h>
+\#include <iostream> 
+\#include <cstring>
+\#include <cstdlib>
+\#include <unistd.h>
 using namespace std;
 
 class Human{
@@ -16,8 +16,8 @@ protected:
 	string name;
 public:
 	virtual void introduce(){
-		cout << "My name is " << name << endl;
-		cout << "I am " << age << " years old" << endl;
+		cout \<< "My name is " << name << endl;
+		cout \<< "I am " << age << " years old" << endl;
 	}
 };
 
@@ -29,7 +29,7 @@ public:
         }
         virtual void introduce(){
 		Human::introduce();
-                cout << "I am a nice guy!" << endl;
+                cout <\< "I am a nice guy!" << endl;
         }
 };
 
@@ -41,7 +41,7 @@ public:
         }
         virtual void introduce(){
                 Human::introduce();
-                cout << "I am a cute girl!" << endl;
+                cout <\< "I am a cute girl!" << endl;
         }
 };
 
@@ -65,7 +65,7 @@ int main(int argc, char* argv[]){
 				len = atoi(argv[1]);
 				data = new char[len];
 				read(open(argv[2], O_RDONLY), data, len);
-				cout << "your data is allocated" << endl;
+				cout \<< "your data is allocated" << endl;
 				break;
 			case 3:
 				delete m;
