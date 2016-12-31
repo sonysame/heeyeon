@@ -1,13 +1,13 @@
 
 \#include \<fcntl.h></br>
-\#include \<iostream> 
-\#include \<cstring>
-\#include \<cstdlib>
-\#include \<unistd.h>
-using namespace std;
+\#include \<iostream></br>
+\#include \<cstring></br>
+\#include \<cstdlib></br>
+\#include \<unistd.h></br>
+using namespace std;</br>
 
-class Human{
-private:
+class Human{</br>
+private:</br>
 	virtual void give_shell(){
 		system("/bin/sh");
 	}
