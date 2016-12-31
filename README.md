@@ -1,83 +1,51 @@
-*#include <fcntl.h>
-#include <iostream> 
-#include <cstring>
-#include <cstdlib>
-#include <unistd.h>
-using namespace std;
+!!!\#include \<fcntl.h></br>
+\#include \<iostream></br>
+\#include \<cstring></br>
+\#include \<cstdlib></br>
+\#include \<unistd.h></br>
+using namespace std;</br>
 
-class Human{
-private:
-	virtual void give_shell(){
-		system("/bin/sh");
-	}
-protected:
-	int age;
-	string name;
-public:
-	virtual void introduce(){
-		cout << "My name is " << name << endl;
-		cout << "I am " << age << " years old" << endl;
-	}
-};
+class Human{</br>private:</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;virtual void give_shell(){</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system("/bin/sh");</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+protected:</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int age;</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string name;</br>
+public:</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;virtual void introduce(){</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << "My name is " << name << endl;</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << "I am " << age << " years old" << endl</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>};</br>
 
-class Man: public Human{
-public:
-	Man(string name, int age){
-		this->name = name;
-		this->age = age;
-        }
-        virtual void introduce(){
-		Human::introduce();
-                cout << "I am a nice guy!" << endl;
-        }
-};
+class Man: public Human{</br>public:</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Man(string name, int age){</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this->name = name;</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this->age = age;</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;virtual void introduce(){</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human::introduce();</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << "I am a nice guy!" << endl;</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>};</br>
 
-class Woman: public Human{
-public:
-        Woman(string name, int age){
-                this->name = name;
-                this->age = age;
-        }
-        virtual void introduce(){
-                Human::introduce();
-                cout << "I am a cute girl!" << endl;
-        }
-};
+class Woman: public Human{</br>public:</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Woman(string name, int age){</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this->name = name;</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this->age = age;</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;virtual void introduce(){</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human::introduce();</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << "I am a cute girl!" << endl;</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
+};</br>
 
-int main(int argc, char* argv[]){
-	Human* m = new Man("Jack", 25);
-	Human* w = new Woman("Jill", 21);
+int main(int argc, char\* argv[]){</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human* m = new Man("Jack", 25);</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human* w = new Woman("Jill", 21);</br>
 
-	size_t len;
-	char* data;
-	unsigned int op;
-	while(1){
-		cout << "1. use\n2. after\n3. free\n";
-		cin >> op;
+        size_t len;	
+	char* data;</br>
+	unsigned int op;</br>
+	while(1){</br>
+		cout << "1. use\n2. after\n3. free\n";</br>
+		cin >> op;</br>
 
-		switch(op){
-			case 1:
-				m->introduce();
-				w->introduce();
-				break;
-			case 2:
-				len = atoi(argv[1]);
-				data = new char[len];
-				read(open(argv[2], O_RDONLY), data, len);
-				cout << "your data is allocated" << endl;
-				break;
-			case 3:
-				delete m;
-				delete w;
-				break;
-			default:
-				break;
-		}
-	}
-
-	return 0;	
-}
-*
+		switch(op){</br>
+			case 1:</br>
+				m->introduce();</br>
+				w->introduce();</br>
+				break;</br>
+			case 2:</br>
+				len = atoi(argv[1]);</br>
+				data = new char[len];</br>
+				read(open(argv[2], O_RDONLY), data, len);</br>
+				cout \<< "your data is allocated" << endl;</br>
+				break;</br>
+			case 3:</br>
+				delete m;</br>
+				delete w;</br>
+				break;</br>
+			default:</br>
+				break;</br>
+		}</br>
+	}</br>
+</br>
+	return 0;	</br>
+}</br>
+</br>
 
 
 처음 1을 입력->3을 입력해서 free를 해보자
