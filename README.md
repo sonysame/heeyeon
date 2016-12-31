@@ -1,4 +1,4 @@
-!!!\#include \<fcntl.h></br>
+\#include \<fcntl.h></br>
 \#include \<iostream></br>
 \#include \<cstring></br>
 \#include \<cstdlib></br>
@@ -14,12 +14,7 @@ class Man: public Human{</br>public:</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb
 class Woman: public Human{</br>public:</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Woman(string name, int age){</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this->name = name;</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this->age = age;</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;virtual void introduce(){</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human::introduce();</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << "I am a cute girl!" << endl;</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
 };</br>
 
-int main(int argc, char\* argv[]){</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human* m = new Man("Jack", 25);</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human* w = new Woman("Jill", 21);</br>
-
-        size_t len;	
-	char* data;</br>
-	unsigned int op;</br>
-	while(1){</br>
+int main(int argc, char\* argv[]){</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human* m = new Man("Jack", 25);</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human* w = new Woman("Jill", 21);</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size_t len;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char* data;</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unsigned int op;</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(1){</br>
 		cout << "1. use\n2. after\n3. free\n";</br>
 		cin >> op;</br>
 
