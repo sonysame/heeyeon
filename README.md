@@ -6,11 +6,7 @@
 \#include \<unistd.h></br>
 using namespace std;</br>
 
-class Human{</br>
-private:</br>
-	virtual void give_shell(){</br>
-		system("/bin/sh");</br>
-	}</br>
+class Human{</br>private:</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;virtual void give_shell(){</br>system("/bin/sh");</br>}</br>
 protected:</br>
 	int age;</br>
 	string name;</br>
